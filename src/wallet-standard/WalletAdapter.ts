@@ -10,6 +10,8 @@ import {
   AptosConnectMethod,
   AptosConnectOutput,
   AptosDisconnectMethod,
+  AptosGetAccountMethod,
+  AptosGetNetworkMethod,
   AptosSignAndSubmitTransactionInput,
   AptosSignAndSubmitTransactionMethod,
   AptosSignAndSubmitTransactionOutput,
@@ -18,6 +20,7 @@ import {
   AptosSignMessageOutput,
   AptosSignTransactionMethod,
   AptosSignTransactionOutput,
+  NetworkInfo,
   StandardEventsListeners,
   StandardEventsNames,
   StandardEventsOnMethod,
@@ -87,6 +90,34 @@ export class WalletAdapter implements IWalletAdapter {
       throw new WalletError(
         (e as any).message,
         ErrorCode.WALLET__DISCONNECT_ERROR
+      );
+    }
+  }
+
+  async network(): Promise<NetworkInfo> {
+    const feature = this.getFeature<{ network: AptosGetNetworkMethod }>(
+      FeatureName.APTOS__NETWORK
+    );
+    try {
+      return await feature.network();
+    } catch (e) {
+      throw new WalletError(
+        (e as any).message,
+        ErrorCode.WALLET__GET_NETWORK_ERROR
+      );
+    }
+  }
+
+  async account() {
+    const feature = this.getFeature<{ account: AptosGetAccountMethod }>(
+      FeatureName.APTOS__ACCOUNT
+    );
+    try {
+      return await feature.account();
+    } catch (e) {
+      throw new WalletError(
+        (e as any).message,
+        ErrorCode.WALLET__GET_ACCOUNT_ERROR
       );
     }
   }

@@ -3,6 +3,10 @@ import {
   AptosConnectMethod,
   AptosDisconnectFeature,
   AptosDisconnectMethod,
+  AptosGetAccountFeature,
+  AptosGetAccountMethod,
+  AptosGetNetworkFeature,
+  AptosGetNetworkMethod,
   AptosSignAndSubmitTransactionFeature,
   AptosSignAndSubmitTransactionMethod,
   AptosSignMessageFeature,
@@ -16,6 +20,8 @@ import {
 
 export type IWalletAdapter = WalletWithFeatures<
   AptosConnectFeature &
+    AptosGetAccountFeature &
+    AptosGetNetworkFeature &
     StandardEventsFeature &
     AptosSignAndSubmitTransactionFeature &
     AptosSignTransactionFeature &
@@ -25,6 +31,8 @@ export type IWalletAdapter = WalletWithFeatures<
   hasFeature: (name: string) => boolean;
   connect: AptosConnectMethod;
   disconnect: AptosDisconnectMethod;
+  network: AptosGetNetworkMethod;
+  account: AptosGetAccountMethod;
   on: StandardEventsOnMethod;
   signAndSubmitTransaction: AptosSignAndSubmitTransactionMethod;
   signTransaction: AptosSignTransactionMethod;
