@@ -7,31 +7,12 @@ export default defineConfig(({ mode }) => ({
     target: 'es2020',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'razorWalletSdk',
+      name: 'razorM1WalletSdk',
       fileName: 'index',
     },
     sourcemap: false,
     minify: true,
-    rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: [
-        '@mysten/sui.js',
-        '@mysten/sui.js/client',
-        '@mysten/sui.js/bcs',
-        '@mysten/sui.js/utils',
-        '@mysten/sui.js/verify',
-      ],
-      output: {
-        globals: {
-          '@mysten/sui.js': 'Sui',
-          '@mysten/sui.js/client': 'Sui',
-          '@mysten/sui.js/bcs': 'Sui',
-          '@mysten/sui.js/utils': 'Sui',
-          '@mysten/sui.js/verify': 'Sui',
-        },
-      },
-    },
+    rollupOptions: {},
   },
   esbuild: {
     target: 'es2020',
