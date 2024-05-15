@@ -5,7 +5,11 @@ import {
 } from './types';
 import { isStandardWalletAdapterCompatibleWallet } from './utils';
 import { WalletAdapter } from './WalletAdapter';
-import { getWallets, Wallet, Wallets as WalletStandardSdk } from '@razorlabs/wallet-standard';
+import {
+  getWallets,
+  Wallet,
+  Wallets as WalletStandardSdk,
+} from '@razorlabs/wallet-standard';
 
 export class WalletRadar implements IWalletRadar {
   private walletStandardSdk: WalletStandardSdk | null;
