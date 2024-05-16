@@ -5,9 +5,8 @@ import {
   WalletAccount,
 } from '@razorlabs/wallet-standard';
 import { IWalletAdapter } from './interfaces/IWalletAdapter';
-import { IWalletAdapterV2 } from './interfaces';
 
-export type WalletRadarSubscriptionInput = (wallets: IWalletAdapter[] |IWalletAdapterV2[]) => void;
+export type WalletRadarSubscriptionInput = (wallets: IWalletAdapter[]) => void;
 export type WalletRadarSubscriptionOutput = () => void;
 
 export type WalletEvent =
