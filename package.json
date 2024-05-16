@@ -1,6 +1,6 @@
 {
   "name": "@razorlabs/m1-wallet-sdk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
@@ -41,6 +41,8 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.14.0",
+    "@aptos-labs/wallet-standard": "^0.0.12",
     "@razorlabs/wallet-standard": "^0.2.1",
     "aptos": "^1.21.0",
     "buffer": "^6.0.3"
