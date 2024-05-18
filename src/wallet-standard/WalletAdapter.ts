@@ -29,7 +29,6 @@ import {
   Wallet,
 } from '@razorlabs/wallet-standard';
 import { has } from '../utils';
-import { AnyRawTransaction } from 'aptos';
 
 /**
  * Wrap the adapter that supports wallet-standard
