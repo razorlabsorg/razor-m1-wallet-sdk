@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@razorlabs/wallet-standard':
-    specifier: ^0.2.1
-    version: 0.2.1
+    specifier: ^0.2.2
+    version: 0.2.2
   aptos:
     specifier: ^1.21.0
     version: 1.21.0
@@ -1014,8 +1014,8 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@razorlabs/wallet-standard@0.2.1:
-    resolution: {integrity: sha512-QqCuyVrUZKmj2xL0wUMv8+zxatKsSrXzZ9AamIy12IdVAJ8TEzpd5Xv9RwhGNB0TBnAsHwy/+YwktFziiBWPbQ==}
+  /@razorlabs/wallet-standard@0.2.2:
+    resolution: {integrity: sha512-ToQ28cpN3SO/z0vLE0KmS88TczgCUNOTVYFD6XmicUUmV7eG+zOCL0aIZO8LMwuhUJiNPYsFVhKPHpjvk7kskA==}
     dependencies:
       '@wallet-standard/core': 1.0.3
       aptos: 1.21.0

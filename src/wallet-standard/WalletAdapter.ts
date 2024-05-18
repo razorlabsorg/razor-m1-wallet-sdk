@@ -18,6 +18,7 @@ import {
   AptosSignMessageInput,
   AptosSignMessageMethod,
   AptosSignMessageOutput,
+  AptosSignTransactionInput,
   AptosSignTransactionMethod,
   AptosSignTransactionOutput,
   NetworkInfo,
@@ -156,14 +157,13 @@ export class WalletAdapter implements IWalletAdapter {
   }
 
   signTransaction(
-    transaction: AnyRawTransaction,
-    asFeePayer?: boolean
+    input: AptosSignTransactionInput
   ): Promise<UserResponse<AptosSignTransactionOutput>> {
     const feature = this.getFeature<{
       signTransaction: AptosSignTransactionMethod;
     }>(FeatureName.APTOS__SIGN_TRANSACTION);
     try {
-      return feature.signTransaction(transaction, asFeePayer);
+      return feature.signTransaction(input);
     } catch (e) {
       throw new WalletError(
         (e as any).message,
