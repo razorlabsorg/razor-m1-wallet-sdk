@@ -12,10 +12,16 @@ export const AptosDevnetChain: Chain = {
   rpcUrl: 'https://aptos.devnet.m1.movementlabs.xyz/',
 };
 
+export const AptosTestnetChain: Chain = {
+  id: AptosChainId.TEST_NET,
+  name: 'Testnet',
+  rpcUrl: 'https://aptos.testnet.suzuka.movementlabs.xyz/v1'
+}
+
 export const UnknownChain: Chain = {
   id: 'unknown:unknown',
   name: 'Unknown Network',
   rpcUrl: '',
 };
 
-export const DefaultChains = [AptosDevnetChain];
+export const DefaultChains = [AptosTestnetChain, AptosDevnetChain];
