@@ -14,7 +14,6 @@ export function handleConnectionError(
   let code = ErrorCode.WALLET__CONNECT_ERROR; // default error
   let message = e.message;
   switch (wallet) {
-    case PresetWallet.MARTIAN_WALLET:
     case PresetWallet.PETRA_WALLET:
     case PresetWallet.RAZOR_APTOS_WALLET:
       if (message.includes('User rejects approval')) {

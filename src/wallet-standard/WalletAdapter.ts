@@ -26,7 +26,7 @@ import {
   StandardEventsNames,
   StandardEventsOnMethod,
   UserResponse,
-  Wallet,
+  AptosWallet,
 } from '@razorlabs/wallet-standard';
 import { has } from '../utils';
 
@@ -35,9 +35,9 @@ import { has } from '../utils';
  * provider universal interfaces to component usage
  */
 export class WalletAdapter implements IWalletAdapter {
-  private standardWalletAdapter: Wallet;
+  private standardWalletAdapter: AptosWallet;
 
-  constructor(standardWalletAdapter: Wallet) {
+  constructor(standardWalletAdapter: AptosWallet) {
     this.standardWalletAdapter = standardWalletAdapter;
   }
 

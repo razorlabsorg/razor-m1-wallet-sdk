@@ -1,7 +1,7 @@
 import {
   AptosChain,
   StandardEventsListeners,
-  Wallet,
+  AptosWallet,
   WalletAccount,
 } from '@razorlabs/wallet-standard';
 import { IWalletAdapter } from './interfaces/IWalletAdapter';
@@ -30,5 +30,5 @@ export interface AccountChangeParams {
 }
 
 export interface FeatureChangeParams {
-  features: Wallet['features'];
+  features: AptosWallet['features'];
 }

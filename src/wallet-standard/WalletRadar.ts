@@ -6,8 +6,8 @@ import {
 import { isStandardWalletAdapterCompatibleWallet } from './utils';
 import { WalletAdapter } from './WalletAdapter';
 import {
+  AptosWallet,
   getWallets,
-  Wallet,
   Wallets as WalletStandardSdk,
 } from '@razorlabs/wallet-standard';
 
@@ -27,13 +27,13 @@ export class WalletRadar implements IWalletRadar {
     this.walletStandardSdk = getWallets();
     const initialWalletAdapters = this.walletStandardSdk.get();
     initialWalletAdapters.forEach((adapter) => {
-      this.setDetectedWalletAdapters(adapter);
+      this.setDetectedWalletAdapters(adapter as AptosWallet);
     });
     this.clearOnRegisterListener = this.walletStandardSdk.on(
       'register',
       (...newAdapters) => {
         newAdapters.forEach((adapter) => {
-          this.setDetectedWalletAdapters(adapter);
+          this.setDetectedWalletAdapters(adapter as AptosWallet);
         });
         this.notifySubscribers();
       }
@@ -66,7 +66,7 @@ export class WalletRadar implements IWalletRadar {
     });
   }
 
-  private setDetectedWalletAdapters(rawAdapter: Wallet) {
+  private setDetectedWalletAdapters(rawAdapter: AptosWallet) {
     if (!isStandardWalletAdapterCompatibleWallet(rawAdapter)) return;
     if (this.walletAdapterMap.has(rawAdapter.name)) return;
 

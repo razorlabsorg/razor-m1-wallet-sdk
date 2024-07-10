@@ -8,7 +8,6 @@ export function defineWallet(params: IDefaultWallet) {
 export enum PresetWallet {
   RAZOR_APTOS_WALLET = 'Razor Wallet',
   PETRA_WALLET = 'Petra Wallet',
-  MARTIAN_WALLET = 'Martian Wallet',
 }
 
 export const RazorAptosWallet = defineWallet({
@@ -19,16 +18,6 @@ export const RazorAptosWallet = defineWallet({
   downloadUrl: {
     browserExtension:
       'https://chromewebstore.google.com/detail/razor-wallet/fdcnegogpncmfejlfnffnofpngdiejii',
-  },
-});
-
-export const MartianWallet = defineWallet({
-  name: PresetWallet.MARTIAN_WALLET,
-  label: 'Martian Wallet',
-  iconUrl: 'https://cdn.martianwallet.xyz/assets/icon.png',
-  downloadUrl: {
-    browserExtension:
-      'https://chrome.google.com/webstore/detail/martian-wallet-aptos-sui/efbglgofoippbgcjepnhiblaibcnclgk',
   },
 });
 

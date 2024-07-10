@@ -3,8 +3,8 @@ import type { IWalletAdapter } from '../wallet-standard';
 export interface IWallet {
   name: string;
   label: string;
-  adapter: IWalletAdapter | undefined;
-  installed: boolean | undefined;
+  adapter: IWalletAdapter;
+  installed: boolean;
   iconUrl: string;
   downloadUrl: {
     browserExtension?: string; // chrome default

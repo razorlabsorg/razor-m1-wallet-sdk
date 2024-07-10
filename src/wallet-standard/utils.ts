@@ -1,6 +1,6 @@
-import { Wallet } from '@razorlabs/wallet-standard';
+import { AptosWallet } from '@razorlabs/wallet-standard';
 
-export function isStandardWalletAdapterCompatibleWallet(wallet: Wallet) {
+export function isStandardWalletAdapterCompatibleWallet(wallet: AptosWallet) {
   return (
     'aptos:connect' in wallet.features &&
     'standard:events' in wallet.features &&
