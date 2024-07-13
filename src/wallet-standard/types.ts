@@ -3,7 +3,7 @@ import {
   StandardEventsListeners,
   AptosWallet,
   WalletAccount,
-} from '@razorlabs/wallet-standard';
+} from '@aptos-labs/wallet-standard';
 import { IWalletAdapter } from './interfaces/IWalletAdapter';
 
 export type WalletRadarSubscriptionInput = (wallets: IWalletAdapter[]) => void;

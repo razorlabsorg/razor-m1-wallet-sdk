@@ -1,4 +1,4 @@
-import { Wallet, getWallets } from '@razorlabs/wallet-standard';
+import { Wallet, getWallets } from '@aptos-labs/wallet-standard';
 import { WalletRadar } from '../WalletRadar';
 import { FeatureName } from '../constants';
 
@@ -22,7 +22,7 @@ beforeEach(() => {
   listeners = [];
 });
 
-jest.mock('@razorlabs/wallet-standard', () => {
+jest.mock('@aptos-labs/wallet-standard', () => {
   return {
     getWallets: jest.fn().mockReturnValue({
       get: () => initialWallets,

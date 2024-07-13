@@ -18,7 +18,6 @@ import {
   AptosSignMessageInput,
   AptosSignMessageMethod,
   AptosSignMessageOutput,
-  AptosSignTransactionInput,
   AptosSignTransactionMethod,
   AptosSignTransactionOutput,
   NetworkInfo,
@@ -27,8 +26,9 @@ import {
   StandardEventsOnMethod,
   UserResponse,
   AptosWallet,
-} from '@razorlabs/wallet-standard';
+} from '@aptos-labs/wallet-standard';
 import { has } from '../utils';
+import { AnyRawTransaction } from '@aptos-labs/ts-sdk';
 
 /**
  * Wrap the adapter that supports wallet-standard
@@ -156,13 +156,14 @@ export class WalletAdapter implements IWalletAdapter {
   }
 
   signTransaction(
-    input: AptosSignTransactionInput
+    transaction: AnyRawTransaction,
+    asFeePayer?: boolean
   ): Promise<UserResponse<AptosSignTransactionOutput>> {
     const feature = this.getFeature<{
       signTransaction: AptosSignTransactionMethod;
     }>(FeatureName.APTOS__SIGN_TRANSACTION);
     try {
-      return feature.signTransaction(input);
+      return feature.signTransaction(transaction, asFeePayer);
     } catch (e) {
       throw new WalletError(
         (e as any).message,

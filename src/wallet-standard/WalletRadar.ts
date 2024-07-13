@@ -9,7 +9,7 @@ import {
   AptosWallet,
   getWallets,
   Wallets as WalletStandardSdk,
-} from '@razorlabs/wallet-standard';
+} from '@aptos-labs/wallet-standard';
 
 export class WalletRadar implements IWalletRadar {
   private walletStandardSdk: WalletStandardSdk | null;

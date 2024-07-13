@@ -13,16 +13,13 @@ import {
   AptosSignMessageMethod,
   AptosSignTransactionFeature,
   AptosSignTransactionMethod,
-  StandardEventsFeature,
-  StandardEventsOnMethod,
   WalletWithFeatures,
-} from '@razorlabs/wallet-standard';
+} from '@aptos-labs/wallet-standard';
 
 export type IWalletAdapter = WalletWithFeatures<
   AptosConnectFeature &
     AptosGetAccountFeature &
     AptosGetNetworkFeature &
-    StandardEventsFeature &
     AptosSignAndSubmitTransactionFeature &
     AptosSignTransactionFeature &
     AptosSignMessageFeature &
@@ -33,7 +30,6 @@ export type IWalletAdapter = WalletWithFeatures<
   disconnect: AptosDisconnectMethod;
   network: AptosGetNetworkMethod;
   account: AptosGetAccountMethod;
-  on: StandardEventsOnMethod;
   signAndSubmitTransaction: AptosSignAndSubmitTransactionMethod;
   signTransaction: AptosSignTransactionMethod;
   signMessage: AptosSignMessageMethod;

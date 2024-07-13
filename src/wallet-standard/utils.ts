@@ -1,4 +1,4 @@
-import { AptosWallet } from '@razorlabs/wallet-standard';
+import { AptosWallet } from '@aptos-labs/wallet-standard';
 
 export function isStandardWalletAdapterCompatibleWallet(wallet: AptosWallet) {
   return (
