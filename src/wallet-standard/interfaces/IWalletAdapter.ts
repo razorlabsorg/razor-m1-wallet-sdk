@@ -13,6 +13,8 @@ import {
   AptosSignMessageMethod,
   AptosSignTransactionFeature,
   AptosSignTransactionMethod,
+  StandardEventsFeature,
+  StandardEventsOnMethod,
   WalletWithFeatures,
 } from '@aptos-labs/wallet-standard';
 
@@ -20,6 +22,7 @@ export type IWalletAdapter = WalletWithFeatures<
   AptosConnectFeature &
     AptosGetAccountFeature &
     AptosGetNetworkFeature &
+    StandardEventsFeature &
     AptosSignAndSubmitTransactionFeature &
     AptosSignTransactionFeature &
     AptosSignMessageFeature &
@@ -27,6 +30,7 @@ export type IWalletAdapter = WalletWithFeatures<
 > & {
   hasFeature: (name: string) => boolean;
   connect: AptosConnectMethod;
+  on: StandardEventsOnMethod;
   disconnect: AptosDisconnectMethod;
   network: AptosGetNetworkMethod;
   account: AptosGetAccountMethod;
